@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { getUserEnrolledCourses } from '../../../services/operations/profileAPI'
+import { getUserEnrolledCourses } from '../../../services/operations/ProfileAPI'
 import ProgressBar from '@ramonak/react-progress-bar'
 import ScreenLoader from '../../common/ScreenLoader'
 
