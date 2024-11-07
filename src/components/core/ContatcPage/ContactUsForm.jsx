@@ -110,6 +110,7 @@ const ContactUsForm = () => {
                             id="firstname"
                             placeholder="Enter first name"
                             className="form-style"
+                            defaultValue={"+91"}
                             {...register("countrycode", { required: true })}
                         >
                             {CountryCode.map((ele, i) => {

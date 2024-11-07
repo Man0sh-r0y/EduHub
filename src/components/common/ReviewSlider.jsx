@@ -22,7 +22,7 @@ function ReviewSlider() {
   const truncateWords = 23
 
   useEffect(() => {
-    ;(async () => {
+    (async () => {
       const { data } = await apiConnector(
         "GET",
         ratingsEndpoints.REVIEWS_DETAILS_API
@@ -35,7 +35,7 @@ function ReviewSlider() {
 
   return (
     <div className="text-white w-full">
-      <div className="my-[50px] w-[300px] lg:w-full mx-auto h-[184px] max-w-maxContentTab lg:max-w-maxContent">
+      <div className="my-[50px] w-[300px] md:w-full mx-auto h-[184px] max-w-maxContentTab md:max-w-maxContent">
         <Swiper
           slidesPerView={1}
           spaceBetween={25}
@@ -80,9 +80,9 @@ function ReviewSlider() {
                   <p className="font-medium text-richblack-25 h-[100px]">
                     {review?.review.split(" ").length > truncateWords
                       ? `${review?.review
-                          .split(" ")
-                          .slice(0, truncateWords)
-                          .join(" ")} ...`
+                        .split(" ")
+                        .slice(0, truncateWords)
+                        .join(" ")} ...`
                       : `${review?.review}`}
                   </p>
                   <div className="flex items-center gap-2">

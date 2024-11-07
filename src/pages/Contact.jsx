@@ -3,6 +3,7 @@ import ContactDetails from '../components/core/ContatcPage/ContactDetails'
 import ContactForm from '../components/core/ContatcPage/ContactForm'
 import Footer from '../components/common/Footer'
 import ReviewSlider from "../components/common/ReviewSlider"
+import CantactUs from "../assets/Images/Contact.jpg"
 
 const Contact = () => {
     return (
@@ -10,7 +11,8 @@ const Contact = () => {
             <div className="mx-auto mt-20 flex w-11/12 max-w-maxContent flex-col justify-between gap-10 text-white lg:flex-row">
                 {/* Contact Details */}
                 <div className="lg:w-[40%]">
-                    <ContactDetails />
+                    {/* <ContactDetails /> */}
+                    <img src={CantactUs} />
                 </div>
         
                 {/* Contact Form */}

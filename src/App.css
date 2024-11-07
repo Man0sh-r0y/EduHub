@@ -236,3 +236,35 @@ details > summary::-webkit-details-marker {
   border: linear-gradient(to right bottom, #ffffff38, #ffffff00);
 } */
 
+.footer {
+  padding: 20px;
+  background-color: #030a32;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+

@@ -20,16 +20,15 @@ export function getUserDetails(token, navigate) {
                 Authorization: `Bearer ${token}`,
             })
 
-            console.log("GET_USER_DETAILS API RESPONSE............", response)
-
             if (!response.data.success) {
                 throw new Error(response.data.message)
             }
 
-            const userImage = response.data.data.userImage
-                ? response.data.data.userImage
+            const userImage = response.data.data.image
+                ? response.data.data.image
                 : `https://api.dicebear.com/5.x/initials/svg?seed=${response.data.data.firstName} ${response.data.data.lastName}`
 
+            
             dispatch(setUser({...response.data.data, image: userImage}))
         } catch(error) {
             dispatch(logout(navigate))
@@ -54,10 +53,6 @@ export async function getUserEnrolledCourses(token) {
                 Authorization: `Bearer ${token}`,
             }
         )
-        // console.log(
-        //     "GET_USER_ENROLLED_COURSES_API RWSPONSE...........",
-        //     response
-        // )
         
         if(!response.data.success) {
             throw new Error(response.data.message)
@@ -65,7 +60,6 @@ export async function getUserEnrolledCourses(token) {
         result = response.data.data
 
     } catch (error) {
-        console.log("GET_USER_ENROLLED_COURSES_API ERROR............", error)
         toast.error(error.response.data.message)
     }
     toast.dismiss(toastId)

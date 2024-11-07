@@ -66,8 +66,6 @@ export function signup(
                 otp,
             })
 
-            console.log("SIGNUP API RESPONSE............", response)
-
             if (!response.data.success) {
                 throw new Error(response.data.message)
             }
@@ -93,8 +91,6 @@ export function login ( email, password, navigate ) {
                 password,
             })
 
-            console.log("LOGIN API RESPONSE............", response)
-
             if (!response.data.success) {
                 throw new Error(response.data.message)
             }
@@ -104,7 +100,9 @@ export function login ( email, password, navigate ) {
             const userImage = response.data?.user?.image
                 ? response.data.user.image
                 : `https://api.dicebear.com/5.x/initials/svg?seed=${response.data.user.firstName} ${response.data.user.lastName}`
-            dispatch(setUser({...response.data.user, image: userImage}))
+
+            dispatch(setUser({ ...response.data.user, image: userImage }))
+
             localStorage.setItem("token", JSON.stringify(response.data.token))
             localStorage.setItem("user", JSON.stringify(response.data.user))
             navigate("/dashboard/my-profile")
@@ -125,8 +123,6 @@ export function getPasswordResetToken (email, setEmailSent) {
             const response = await apiConnector("POST", RESETPASSTOKEN_API, {
                 email,
             })
-
-            console.log("RESETPASSTOKEN RESPONSE............", response)
 
             if (!response.data.success) {
                 throw new Error(response.data.message)
@@ -154,7 +150,6 @@ export function resetPassword (password, confirmPassword, token, navigate) {
                 token,
             })
 
-            console.log("RESETPASSWORD RESPONSE............", response)
       
             if (!response.data.success) {
               throw new Error(response.data.message)

@@ -28,7 +28,7 @@ const ExploreMore = () => {
   return (
     <div>
       {/* Explore more section */}
-      <div>
+      <div className="">
         <div className="text-4xl font-semibold text-center my-10">
           Unlock the
           <HighlightText text={"Power of Code"} />

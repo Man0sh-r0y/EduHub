@@ -23,7 +23,7 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
-    ; (async () => {
+     (async () => {
       setLoading(true)
       try {
         const res = await apiConnector("GET", categories.CATEGORIES_API)
@@ -47,8 +47,7 @@ function Navbar() {
 
   return (
     <div
-      className={`flex h-14 items-center justify-center border-b-[1px] border-b-richblack-700 ${location.pathname !== "/" ? "bg-richblack-800" : ""
-        } transition-all duration-200`}
+      className={`flex h-14 items-center justify-center border-b-[1px] border-b-richblack-700 bg-richblack-900 transition-all duration-200`}
     >
       <div className="flex w-11/12 max-w-maxContent items-center justify-between">
         {/* Logo */}
@@ -98,38 +97,44 @@ function Navbar() {
         </nav>
         {/* Login / Signup / Dashboard */}
         <div className="hidden items-center gap-x-4 md:flex">
-          {user && user?.accountType !== ACCOUNT_TYPE.INSTRUCTOR && (
-            <Link to="/dashboard/wishlist" className="relative">
-              <AiOutlineShoppingCart className="text-2xl text-richblack-100" />
-              {totalItems > 0 && (
-                <span className="absolute -bottom-2 -right-2 grid h-5 w-5 place-items-center overflow-hidden rounded-full bg-richblack-600 text-center text-xs font-bold text-yellow-100">
-                  {totalItems}
-                </span>
-              )}
-            </Link>
-          )}
-          {token === null && (
-            <Link to="/login">
-              <button className="rounded-[8px] border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100">
-                Log in
-              </button>
-            </Link>
-          )}
-          {token === null && (
-            <Link to="/signup">
-              <button className="rounded-[8px] border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100">
-                Sign up
-              </button>
-            </Link>
-          )}
+          {
+            user && user?.accountType !== ACCOUNT_TYPE.INSTRUCTOR && (
+              <Link to="/dashboard/wishlist" className="relative">
+                <AiOutlineShoppingCart className="text-2xl text-richblack-100" />
+                {totalItems > 0 && (
+                  <span className="absolute -bottom-2 -right-2 grid h-5 w-5 place-items-center overflow-hidden rounded-full bg-richblack-600 text-center text-xs font-bold text-yellow-100">
+                    {totalItems}
+                  </span>
+                )}
+              </Link>
+            )
+          }
+          {
+            token === null && (
+              <Link to="/login">
+                <button className="rounded-[8px] border border-richblack-700 bg-richblack-700 px-[12px] py-[8px] text-white">
+                  Log in
+                </button>
+              </Link>
+            )
+          }
+          {
+            token === null && (
+              <Link to="/signup">
+                <button className="rounded-[8px] border border-richblack-700 bg-richblack-700 px-[12px] py-[8px] text-white">
+                  Sign up
+                </button>
+              </Link>
+            )
+          }
           {token !== null && <ProfileDropdown />}
         </div>
-        <button className="mr-4 md:hidden relative"
-          onClick={toggleDropdown}
-        >
+        
+        <button className="mr-4 md:hidden relative" onClick={toggleDropdown}>
           <AiOutlineMenu fontSize={24} fill="#AFB2BF" />
         </button>
-        {/* {isOpen && (<NavbarDropDown />)} */}
+
+        {isOpen && (<NavbarDropDown isOpen={isOpen} toggleDropdown={toggleDropdown} />)}
       </div>
     </div>
   )
