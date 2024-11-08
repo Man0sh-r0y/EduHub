@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7fca69e3.css",
+    "main.js": "/static/js/main.5cfaa310.js",
+    "static/media/Instructor.jpg": "/static/media/Instructor.9603ebc7e76c78790199.jpg",
+    "static/media/homepage-img-showcase.jpg": "/static/media/homepage-img-showcase.707e58cb9025ef24b025.jpg",
+    "static/media/Contact.jpg": "/static/media/Contact.68269612b52339dcaa71.jpg",
+    "static/media/Signup_img.jpg": "/static/media/Signup_img.60c422a7f092298dffd4.jpg",
+    "static/media/Login_img_3.jpg": "/static/media/Login_img_3.0cfe629ce83fdc08b98a.jpg",
+    "static/media/FoundingStory.png": "/static/media/FoundingStory.84f2828a5f4a9c08a802.png",
+    "static/media/bghome.svg": "/static/media/bghome.354d9966c701455b23db.svg",
+    "static/media/Compare_with_others.png": "/static/media/Compare_with_others.a849beb7dbec594a4f53.png",
+    "static/media/Plan_your_lessons.png": "/static/media/Plan_your_lessons.0848277c6ae4d27c3f30.png",
+    "static/media/EduHub_LOGO_2.png": "/static/media/EduHub_LOGO_2.b3e24984ece6e2d82b9d.png",
+    "static/media/Studing Girl.avif": "/static/media/Studing Girl.f782bbc12a0f901ec6a7.avif",
+    "static/media/Know_your_progress.png": "/static/media/Know_your_progress.cf3ea1c51544985430d3.png",
+    "static/media/frame.png": "/static/media/frame.3a238e5f26d676376e1d.png",
+    "static/media/aboutus1.webp": "/static/media/aboutus1.86606deea209badf5925.webp",
+    "static/media/aboutus2.webp": "/static/media/aboutus2.0a1cd797ce3a69e81830.webp",
+    "static/media/aboutus3.webp": "/static/media/aboutus3.f5cfba861877ea03735d.webp",
+    "static/media/Logo2.svg": "/static/media/Logo2.86881d6fa0d417d6622a8707fea5730c.svg",
+    "static/media/Logo1.svg": "/static/media/Logo1.b2c24a5a3beb20a875b0f80c5d3a7933.svg",
+    "static/media/Logo3.svg": "/static/media/Logo3.9ede0b8fa9815c349607d24a2fc2db64.svg",
+    "static/media/Logo4.svg": "/static/media/Logo4.396cbd92b53e6362b13c448e73c6f28b.svg",
+    "index.html": "/index.html",
+    "main.7fca69e3.css.map": "/static/css/main.7fca69e3.css.map",
+    "main.5cfaa310.js.map": "/static/js/main.5cfaa310.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7fca69e3.css",
+    "static/js/main.5cfaa310.js"
+  ]
+}

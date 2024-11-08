@@ -86,8 +86,8 @@ function Navbar() {
                   <div className="relative flex items-center gap-2 group">
                     <p className="cursor-pointer">{navItems.title}</p>
 
-                    <div className="invisible absolute left-[-70%] top-[180%] flex flex-col gap-4 rounded-md bg-richblack-25 text-richblack-800 p-4  opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 lg:w-[300px]">
-                      {subLinks.length > 0 ? (
+                    <div className="invisible absolute left-[-70%] top-[180%] flex flex-col gap-4 rounded-md bg-richblack-5 text-richblack-800 p-4  opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 lg:w-[300px] z-20">
+                      {subLinks?.length > 0 ? (
                         subLinks.map((catagory, index) => (
                           <Link
                             to={`/catalog/${catagory.name
@@ -96,7 +96,7 @@ function Navbar() {
                               .toLowerCase()}`}
                             key={index}
                           >
-                            <span className="cursor-pointer">
+                            <span className="cursor-pointer hover:bg-richblack-25 hover:p-1 hover:transition-all hover:duration-300 hover:rounded-xl">
                               {catagory.name}
                             </span>
                           </Link>
