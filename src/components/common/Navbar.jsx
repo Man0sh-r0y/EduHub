@@ -17,6 +17,11 @@ import { MdLogin } from "react-icons/md";
 import { SiGnuprivacyguard } from "react-icons/si";
 import { FaHome } from "react-icons/fa";
 import { MdContactSupport } from "react-icons/md";
+import { PiBooksLight } from "react-icons/pi";
+import { FaDiscourse } from "react-icons/fa6";
+import { FaClipboardList } from "react-icons/fa6";
+import { IoSettings } from "react-icons/io5";
+
 
 function Navbar() {
   const { token } = useSelector((state) => state.auth);
@@ -105,8 +110,8 @@ function Navbar() {
                   <Link to={navItems?.path}>
                     <p
                       className={`${matchRoute(navItems?.path)
-                          ? "border-b-2 border-yellow-800"
-                          : "border-0"
+                        ? "border-b-2 border-yellow-800"
+                        : "border-0"
                         }`}
                     >
                       {navItems.title}
@@ -160,10 +165,48 @@ function Navbar() {
               {
                 user && (
                   <div>
+
+                    <div className="flex items-center p-2 hover:bg-gray-700 cursor-pointer">
+                      <FaHome className="mr-2" />
+                      <Link to="/">Home</Link>
+                    </div>
+
+                    <div className="flex items-center p-2 hover:bg-gray-700 cursor-pointer">
+                      <MdContactSupport className="mr-2" />
+                      <Link to="/contact">Contact Us</Link>
+                    </div>
+
                     <div className="flex items-center p-2 hover:bg-gray-700 cursor-pointer">
                       <VscDashboard className="mr-2" />
                       <Link to="/dashboard/my-profile">Dashboard</Link>
                     </div>
+
+                    {
+                      user?.accountType !== ACCOUNT_TYPE.INSTRUCTOR && (
+                        <div>
+                          <div className="flex items-center p-2 hover:bg-gray-700 cursor-pointer">
+                            <PiBooksLight className="mr-2" />
+                            <Link to="/dashboard/courses">Courses</Link>
+                          </div>
+
+                          <div className="flex items-center p-2 hover:bg-gray-700 cursor-pointer">
+                            <FaDiscourse className="mr-2" />
+                            <Link to="/dashboard/enrolled-courses">Enrolled Courses</Link>
+                          </div>
+
+                          <div className="flex items-center p-2 hover:bg-gray-700 cursor-pointer">
+                            <FaClipboardList className="mr-2" />
+                            <Link to="/dashboard/wishlist">Wishlist</Link>
+                          </div>
+                        </div>
+                      )
+                    }
+
+                    <div className="flex items-center p-2 hover:bg-gray-700 cursor-pointer">
+                      <IoSettings className="mr-2" />
+                      <Link to="/dashboard/settings">Settings</Link>
+                    </div>
+
                     <div
                       className="flex items-center p-2 hover:bg-gray-700 cursor-pointer"
                       onClick={handleLogout}
