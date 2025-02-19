@@ -29,8 +29,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
     cors({
-        //origin: "https://eduhubbymanash.vercel.app",
-        origin: "*",
+        origin: "https://eduhubbymanash.vercel.app",
         credentials: true,
     })
 )
