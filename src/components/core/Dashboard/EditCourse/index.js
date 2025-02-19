@@ -13,6 +13,8 @@ export default function EditCourse() {
     const { token } =useSelector((state) => state.auth);
     const [loading, setLoaing] = useState(false);
 
+    console.log("Course ID: ",courseId);
+
     useEffect(() => {
         const populateCourseDetails = async() => {
             setLoaing(true);
