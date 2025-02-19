@@ -70,7 +70,7 @@ exports.createCourse = async (req,res) => {
         const categoryDetails = await Category.findById(category);
 
         console.log("Category Details: ", categoryDetails);
-        
+
         if(!categoryDetails){
             return res.status(404).json({
                 success: false,
@@ -92,7 +92,7 @@ exports.createCourse = async (req,res) => {
             whatYouWillLearn: whatYouWillLearn,
             price,
             tag,
-            Category: categoryDetails._id,
+            category: categoryDetails._id,
             thumbnail: thumbnailImage.secure_url,
             status: status,
             instructions, 
