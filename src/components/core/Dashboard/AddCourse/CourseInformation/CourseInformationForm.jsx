@@ -62,6 +62,7 @@ export default function CourseInformationForm() {
   const isFormUpdated = () => {
     const currentValues = getValues()
     console.log("changes after editing form values:", currentValues)
+    console.log("Course: ", course)
     console.log("Course category: ", course.category)
     if (
       currentValues.courseTitle !== course.courseName ||
