@@ -4,7 +4,7 @@
 
 EduHub is an EdTech Platform. It is a full-stack web application that enables multiple instructors to create and manage courses while allowing students to register, purchase courses, and access recorded lectures. The platform also features authentication, payments, and course reviews.
 
-## 🛠 Tech Stack & Why We Used It
+## 🛠 Tech Stack & Why We Used
 
 ### Frontend:
 
